@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public isCollapsed1 = true;
+  public isCollapsed2 = false;
+  public isCollapsed3 = false;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -30,10 +30,10 @@
           <h2 data-aos="fade-up" data-aos-delay="400">Попробуйте наш сервис который поможет вам лучше узнать поведение вашей аудитории</h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
-              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" disabled>
+              <!-- <button class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" disabled="true">
                 <span>Начать</span>
                 <i class="bi bi-arrow-right"></i>
-              </a>
+              </button> -->
             </div>
           </div>
         </div>
@@ -163,21 +163,20 @@
             <!-- Tabs -->
             <ul class="nav nav-pills mb-3">
               <li>
-                <a class="nav-link active" data-bs-toggle="pill" href="#tab1">Saepe fuga</a>
+                <a class="nav-link" [ngClass]='{"active": isCollapsed1, "bruh": !isCollapsed1}' (click)="isCollapsed1 = true; isCollapsed2 = false; isCollapsed3 = false;" [attr.aria-expanded]="!isCollapsed1" aria-controls="tab1">Saepe fuga</a>
               </li>
               <li>
-                <a class="nav-link" data-bs-toggle="pill" href="#tab2">Voluptates</a>
+                <a class="nav-link" [ngClass]='{"active": isCollapsed2, "bruh": !isCollapsed2}' (click)="isCollapsed1 = false; isCollapsed2 = true; isCollapsed3 = false;" [attr.aria-expanded]="!isCollapsed2" aria-controls="tab2">Voluptates</a>
               </li>
               <li>
-                <a class="nav-link" data-bs-toggle="pill" href="#tab3">Corrupti</a>
+                <a class="nav-link" [ngClass]='{"active": isCollapsed3, "bruh": !isCollapsed3}' (click)="isCollapsed1 = false; isCollapsed2 = false; isCollapsed3 = true;" [attr.aria-expanded]="!isCollapsed3" aria-controls="tab3">Corrupti</a>
               </li>
             </ul><!-- End Tabs -->
 
             <!-- Tab Content -->
             <div class="tab-content">
 
-              <div class="tab-pane fade show active" id="tab1">
-                <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+              <div class="tab-pane" style="opacity: 1;" [ngClass]='{"active": isCollapsed1, "bruh": !isCollapsed1}' id="tab1" [ngbCollapse]="isCollapsed1">
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
                   <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
@@ -190,8 +189,7 @@
                 <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
               </div><!-- End Tab 1 Content -->
 
-              <div class="tab-pane fade show" id="tab2">
-                <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+              <div class="tab-pane" style="opacity: 1;" [ngClass]='{"active": isCollapsed2, "bruh": !isCollapsed2}' id="tab2" [ngbCollapse]="isCollapsed2">
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
                   <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
@@ -204,8 +202,7 @@
                 <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
               </div><!-- End Tab 2 Content -->
 
-              <div class="tab-pane fade show" id="tab3">
-                <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+              <div class="tab-pane" style="opacity: 1;" [ngClass]='{"active": isCollapsed3, "bruh": !isCollapsed3}' id="tab3" [ngbCollapse]="isCollapsed3">
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
                   <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
@@ -239,7 +236,7 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Цена</h2>
+          <p>Цена</p>
         </header>
 
         <div class="row gy-4" data-aos="fade-left">
@@ -257,7 +254,7 @@
                 <li class="na">Интеграция через API</li>
                 <li class="na">Полная статистика</li>
               </ul>
-              <a href="#" class="btn-buy">Начать использование</a>
+              <!-- <button class="btn-buy" disabled>Начать использование</button> -->
             </div>
           </div>
 
@@ -276,7 +273,7 @@
                 <li>Интеграция через API</li>
                 <li>Полная статистика</li>
               </ul>
-              <a href="#" class="btn-buy">Подключить</a>
+              <!--<button class="btn-buy" disabled>Подключить</button>-->
             </div>
           </div>
 
