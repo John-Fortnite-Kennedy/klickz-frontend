@@ -158,18 +158,18 @@
         <!-- Feature Tabs -->
         <div class="row feture-tabs" data-aos="fade-up">
           <div class="col-lg-6">
-            <h3>Neque officiis dolore maiores et exercitationem quae est seda lidera pat claero</h3>
+            <h3>Мы ценим ваше время, поэтому сделали процесс пользования сервисом очень простым и понятным.</h3>
 
             <!-- Tabs -->
             <ul class="nav nav-pills mb-3">
               <li>
-                <a class="nav-link" [ngClass]='{"active": isCollapsed1, "bruh": !isCollapsed1}' (click)="isCollapsed1 = true; isCollapsed2 = false; isCollapsed3 = false;" [attr.aria-expanded]="!isCollapsed1" aria-controls="tab1">Saepe fuga</a>
+                <a class="nav-link" [ngClass]='{"active": isCollapsed1, "bruh": !isCollapsed1}' (click)="isCollapsed1 = true; isCollapsed2 = false; isCollapsed3 = false;" [attr.aria-expanded]="!isCollapsed1" aria-controls="tab1">Начните прямо сейчас</a>
               </li>
               <li>
-                <a class="nav-link" [ngClass]='{"active": isCollapsed2, "bruh": !isCollapsed2}' (click)="isCollapsed1 = false; isCollapsed2 = true; isCollapsed3 = false;" [attr.aria-expanded]="!isCollapsed2" aria-controls="tab2">Voluptates</a>
+                <a class="nav-link" [ngClass]='{"active": isCollapsed2, "bruh": !isCollapsed2}' (click)="isCollapsed1 = false; isCollapsed2 = true; isCollapsed3 = false;" [attr.aria-expanded]="!isCollapsed2" aria-controls="tab2">Статистика</a>
               </li>
               <li>
-                <a class="nav-link" [ngClass]='{"active": isCollapsed3, "bruh": !isCollapsed3}' (click)="isCollapsed1 = false; isCollapsed2 = false; isCollapsed3 = true;" [attr.aria-expanded]="!isCollapsed3" aria-controls="tab3">Corrupti</a>
+                <a class="nav-link" [ngClass]='{"active": isCollapsed3, "bruh": !isCollapsed3}' (click)="isCollapsed1 = false; isCollapsed2 = false; isCollapsed3 = true;" [attr.aria-expanded]="!isCollapsed3" aria-controls="tab3">Как это работает?</a>
               </li>
             </ul><!-- End Tabs -->
 
@@ -177,43 +177,22 @@
             <div class="tab-content">
 
               <div class="tab-pane" style="opacity: 1;" [ngClass]='{"active": isCollapsed1, "bruh": !isCollapsed1}' id="tab1" [ngbCollapse]="isCollapsed1">
-                <div class="d-flex align-items-center mb-2">
-                  <i class="bi bi-check2"></i>
-                  <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
-                </div>
-                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
-                <div class="d-flex align-items-center mb-2">
-                  <i class="bi bi-check2"></i>
-                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
-                </div>
-                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
-              </div><!-- End Tab 1 Content -->
+                <p>Зарегистрируйтесь на веб-сайте используя ваш номер телефона, и вы сможете сразу же приступить к использованию сервиса. 
+                  Зайдя в личный кабинет, вы сразу же увидите предложение о создании новой ссылки. После этого, сервис направит вас на страницу
+                  где вы сможете видеть статистику по переходам в режиме реального времени.</p>
+               </div><!-- End Tab 1 Content -->
 
               <div class="tab-pane" style="opacity: 1;" [ngClass]='{"active": isCollapsed2, "bruh": !isCollapsed2}' id="tab2" [ngbCollapse]="isCollapsed2">
-                <div class="d-flex align-items-center mb-2">
-                  <i class="bi bi-check2"></i>
-                  <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
-                </div>
-                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
-                <div class="d-flex align-items-center mb-2">
-                  <i class="bi bi-check2"></i>
-                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
-                </div>
-                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
-              </div><!-- End Tab 2 Content -->
+                
+                <p>В личном кабинете у вас будет возможность не только наблюдать за статистикой, вы так же сможете делиться ею, поделившись правами на просмотр, 
+                  или же экспортировав ее в формате CSV или JSON.</p>
+                </div><!-- End Tab 2 Content -->
 
               <div class="tab-pane" style="opacity: 1;" [ngClass]='{"active": isCollapsed3, "bruh": !isCollapsed3}' id="tab3" [ngbCollapse]="isCollapsed3">
-                <div class="d-flex align-items-center mb-2">
-                  <i class="bi bi-check2"></i>
-                  <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
-                </div>
-                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
-                <div class="d-flex align-items-center mb-2">
-                  <i class="bi bi-check2"></i>
-                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
-                </div>
-                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
-              </div><!-- End Tab 3 Content -->
+                <p>После того как вы создадите укороченную ссылку, мы сохраним ее изначальный адрес. После того, как пользователь перейдет по укороченной ссылке 
+                  на наш сервер, мы сохраним информацию о его переходе, и направим его по изначальному адресу. 
+                  При создании сервиса мы уделили большое внимание оптимизации и скорости перехода, поэтому ваши пользователи не заметят никаких задержок.</p>
+               </div><!-- End Tab 3 Content -->
 
             </div>
 
@@ -301,45 +280,32 @@
               <!-- <i class="bi bi-hand-index pe-3" style="transform: scale(1.6);"></i> -->
               <span>Klickz</span>
             </a>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-            <div class="social-links mt-3">
+            <p>Стабильное и масштабируемое решение для вашего бизнеса!</p>
+            <!-- <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
               <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
               <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
               <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
+            </div> -->
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="">Главная</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about">О проекте</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#features">Особенности сервиса</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#pricing">Цена</a></li>
             </ul>
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
+
           </div>
 
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
+            <h4>Свяжитесь с нами!</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              <strong>Email:</strong> klickz@gmail.com<br>
             </p>
 
           </div>
