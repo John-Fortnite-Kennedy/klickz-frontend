@@ -36,7 +36,9 @@ export class BuildingsComponent implements OnInit, AfterViewInit {
 
   private loader = new THREE.TextureLoader();
   private geometry = new THREE.BoxGeometry(4,4,4);
-  private material = new THREE.MeshBasicMaterial({map: this.loader.load(this.texture)});
+  private material = new THREE.MeshBasicMaterial({/*map: this.loader.load(this.texture)*/color: 0xF7F7F7,
+  wireframe: true,
+  wireframeLinewidth: 2});
 
   private cube: THREE.Mesh = new THREE.Mesh(this.geometry, this.material);
 
