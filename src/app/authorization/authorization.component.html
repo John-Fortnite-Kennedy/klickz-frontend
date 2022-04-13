@@ -1,31 +1,19 @@
 <div class="wrapper fadeInDown m-0">
-    <div id="formContent">
+    <div id="formContent" *ngIf="showLogin">
       <div class="fadeIn first">
-        <div><h2></h2></div>
+        <div><h2>Авторизация</h2></div>
       </div>
         <input type='text' [(ngModel)]="login" class="fadeIn second" id='email' placeholder='Почта'>
-        <!-- <ng-container *ngFor='let validation of validation_messages.login'>
-          <p>
-            <small class='error-message'>
-              <i>{{ validation.message }}</i>
-            </small>
-          </p>
-        </ng-container> -->
+
         <input type='password' [(ngModel)]="password" class="fadeIn third" id='password' placeholder='Пароль'>
-        <!-- <ng-container *ngFor='let validation of validation_messages.password'>
-          <p>
-            <small class='error-message'>
-              <i>{{ validation.message }}</i>
-            </small>
-          </p>
-        </ng-container> -->
         <input type="button" (click)="onSubmit(login, password)" id='btn-login' class="fadeIn fourth" value="Войти">
       <div id="formFooter">
-        <a class="underlineHover" href="#">Забыли пароль?</a>
+        <!--<a class="underlineHover" href="#">Забыли пароль?</a><br>-->
+        <button (click)="switch()">Регистрация</button>
       </div>
     </div>
 
-    <div id="formContent">
+    <div id="formContent" *ngIf="!showLogin">
         <div class="fadeIn first">
           <div><h2>Регистрация</h2></div>
         </div>
@@ -35,6 +23,7 @@
           <input type="button" (click)="register(login, password, phone)" id='btn-login' class="fadeIn fourth" value="Войти">
         <div id="formFooter">
           <!--<a class="underlineHover" href="#">Забыли пароль?</a>-->
+          <button class="btn" (click)="switch()">Авторизация</button>
         </div>
       </div>
   </div>

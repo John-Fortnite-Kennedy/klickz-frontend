@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: "buildings", component: BuildingsComponent},
   {path: "auth", component: AuthorizationComponent},
   {path: "verification", component: StartverificationComponent},
-  {path: "dashboard", component: DashboardComponent}
+  {path: "dashboard_our", component: DashboardComponent}
 ];
 
 @NgModule({

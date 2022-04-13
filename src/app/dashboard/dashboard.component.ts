@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiCallerService } from '../api-caller.service';
+import { MediaChange, MediaObserver } from "@angular/flex-layout";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,8 +11,13 @@ import { ApiCallerService } from '../api-caller.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private api: ApiCallerService) {
+  private opened: boolean = true;
+  private mediaWatcher: Subscription;
+  //private menu: NavItem[] = menu;
+
+  constructor(private api: ApiCallerService, public router: Router, private media: MediaObserver) {
     this.api.myjwt =  sessionStorage.getItem('token');
+    //console.log(this.api);
     console.log(sessionStorage.getItem('token'));
     var response = this.api.sendGetRequestWithAuth("/auth/userdata")
     response.subscribe(data => {
@@ -17,11 +25,28 @@ export class DashboardComponent implements OnInit {
     }, error => {
       // Add if login and password is incorrect.
       this.api.errorHandler(error.status);
+      this.router.navigateByUrl('/');
+    })
+
+
+    this.mediaWatcher = this.media.media$.subscribe((mediaChange: MediaChange) => {
+        this.handleMediaChange(mediaChange);
     })
     
   }
 
-  ngOnInit(): void {
+  private handleMediaChange(mediaChange: MediaChange) {
+      if (this.media.isActive('lt-md')) {
+          this.opened = false;
+      } else {
+          this.opened = true;
+      }
   }
 
+  ngOnDestroy() {
+      this.mediaWatcher.unsubscribe();
+  }
+
+  ngOnInit(): void {
+  }
 }

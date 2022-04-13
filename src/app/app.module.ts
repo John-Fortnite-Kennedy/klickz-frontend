@@ -13,6 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { StartverificationComponent } from './startverification/startverification.component';
 import { CodeInputModule } from 'angular-code-input';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +38,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NgbModule,
     FormsModule,
     HttpClientModule,
-    CodeInputModule
+    CodeInputModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

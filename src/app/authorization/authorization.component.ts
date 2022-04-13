@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiCallerService } from '../api-caller.service';
+import {
+  CSS3DRenderer,
+  CSS3DObject
+} from "three/examples/jsm/renderers/CSS3DRenderer.js";
+import * as THREE from "three";
 
 @Component({
   selector: 'app-authorization',
@@ -15,6 +20,20 @@ export class AuthorizationComponent implements OnInit {
   login;
   password;
   phone;
+
+  camera;
+  scene;
+  renderer;
+
+  showLogin = true;
+
+  switch(){
+    if (this.showLogin) {
+      this.showLogin=false;
+    } else {
+      this.showLogin=true;
+    } 
+  }
 
   validation_messages = {
     'login': [
@@ -47,16 +66,71 @@ export class AuthorizationComponent implements OnInit {
     // });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this.camera = new THREE.PerspectiveCamera(40,window.innerWidth / window.innerHeight,1,10000);
+    this.camera.position.z = 1000;
+  
+    this.scene = new THREE.Scene();
+
+    const main = document.createElement("div");
+    main.className = "main";
+
+
+    const head = document.createElement("div");
+    head.className = "fadeIn first";
+    head.innerHTML= '<div><h2>Регистрация</h2></div>';
+    main.appendChild(head);
+
+    const form = document.createElement("div");
+    form.className = "form";
+    form.innerHTML = "<input type='text' [(ngModel)]='login' class='fadeIn second' id='email' placeholder='Почта'><input type='password' [(ngModel)]='password' class='fadeIn third' id='password' placeholder='Пароль'><input type='button' (click)='console.log(1)' id='btn-login' class='fadeIn fourth' value='Войти'>";
+    main.appendChild(form);
+
+    const foot = document.createElement("div");
+    foot.id = "formFooter";
+    main.appendChild(foot);
+
+    // const symbol = document.createElement("div");
+    // symbol.className = "symbol";
+    // symbol.textContent = table[i];
+    // element.appendChild(symbol);
+
+    // const details = document.createElement("div");
+    // details.className = "details";
+    // details.innerHTML = table[i + 1] + "<br>" + table[i + 2];
+    // element.appendChild(details);
+
+    const objectCSS = new CSS3DObject(main);
+    objectCSS.position.x = 0;//Math.random() * 4000 - 2000;
+    objectCSS.position.y = 0;//Math.random() * 4000 - 2000;
+    objectCSS.position.z = 0;//Math.random() * 4000 - 2000;
+    this.scene.add(objectCSS);
+
+
+    this.renderer = new CSS3DRenderer();
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.render(this.scene, this.camera);
+    const container = document.getElementById("formContent");
+    //if (container) container.appendChild(this.renderer.domElement);
+  }
+
+  ngAfterViewInit() {
+    
+ 
+    
+  }
+
+  
 
   onSubmit(login: any, password: any){
+    console.log(login,password);
     var data = {
       "login":login,
       "password":password
     }
     var response = this.api.sendPostRequest(data, "/common/login")
     response.subscribe(data => {
-      sessionStorage.setItem('token', JSON.stringify(data['payload']));
+      sessionStorage.setItem('token', data['payload']);
       console.log(data['payload']);
       this.router.navigateByUrl('/dashboard');
     }, error => {
